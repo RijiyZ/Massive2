@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class Main {
     static int[] arr = generateRandomArray();
 
-    public static int[] generateRandomArray() {
+    public static int[] generateRandomArray() { // рандом
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++) {
