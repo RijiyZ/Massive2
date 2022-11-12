@@ -13,7 +13,6 @@ public class Main {
         }
         return arr;
     }
-
     public static void main(String[] args) {
         System.out.println(Arrays.toString(arr));
         for (int index = 0; index < generateRandomArray().length; index++) {
@@ -35,8 +34,8 @@ public class Main {
 
         double average;
         average = IntStream.of(generateRandomArray()).sum() / 30;
-        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
 
+        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
