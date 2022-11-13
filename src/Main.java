@@ -1,7 +1,3 @@
-import java.util.Arrays;
-import java.util.OptionalInt;
-import java.util.stream.IntStream;
-
 public class Main {
     static int[] arr = generateRandomArray();
 
@@ -13,32 +9,36 @@ public class Main {
         }
         return arr;
     }
-    public static void main(String[] args) { // 1 задание
-        System.out.println(Arrays.toString(arr));
-        for (int index = 0; index < generateRandomArray().length; index++) {
-            if (index == generateRandomArray().length - 1)
-                System.out.println("Сумма трат за месяц составила " + IntStream.of(generateRandomArray()).sum() + " рублей.");
+    public static void main(String[] args) {
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if ( i > 28){
+            System.out.println("1 Задание: | Сумма трат за месяц составила " + sum + " рублей.  | "); }
         }
-        IntStream intStream = Arrays.stream(arr);
-        OptionalInt optionalInt = intStream.max();
-        int maxAsInt = optionalInt.getAsInt();
-        System.out.println("Максимальное число = " + maxAsInt); // 2 задание
 
-        int min = 0;
-        for (int j : arr) {
-            if (j < arr[0]) {
-                min = j;
+        int min = arr[0];
+        int max = 0;
+        for (int h : arr) {
+            if (h < arr[0]) {
+                min = h;
             }
         }
-        System.out.println("Минимальное число = " + min);
-
-        double average;
-        average = IntStream.of(generateRandomArray()).sum() / 30;
-
-        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей"); // 3 задание
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]); // 4 задание
+        for (int w : arr) {
+            if (w > arr[0]) {
+                max = w;
+            }
         }
+        System.out.println("2 Задание: | Минимальное число = " + min +" | Максимальное число = " + max + " |");
+
+        double average = sum / arr.length;
+        System.out.println("3 Задание: | Средняя сумма трат за месяц составила " + average + " рублей | ");
+
+        System.out.print("4 Задание: | ");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'e', 'r', 'a', 'k', 'i', 'D'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
+        System.out.print(" | ");
     }
 }
